@@ -4,6 +4,8 @@
 
 给一条 `x.com/.../status/{id}` 链接，会拉公开 Quote（不算点赞、转发、纯回复），对照 `.grok/skills/x-quote-watchlist/references/watchlist.md`，在聊天里出表，并在仓库根目录落一份 markdown。
 
+同一份名单也可以拉当前粉丝数：`/x-followers-watchlist`。每次新写一份带拉取时间的文件，并和上一份对比增减。
+
 ## 怎么用
 
 在本仓库里对 Grok 说：
@@ -13,6 +15,20 @@
 ```
 
 也可以直接贴帖子链接，或说「这个帖谁引用了 / 谁还没引用」。
+
+## 粉丝数
+
+```text
+/x-followers-watchlist
+```
+
+结果写在仓库根目录，**每次新文件**：
+
+```text
+followers-截止-YYYY-MM-DD-HHmm.md
+```
+
+时间是拉取时的北京时间。表头上方写拉取时间，表格按本次粉丝数降序，第一列是序号，粉丝旁是发帖总数，最后一列是拉取时间。另有对比的上一份文件名、每人本次 / 上次 / 变化。第一份没有上一份，变化列写「基线」。对比时按 handle 对齐，不按序号。变化只算粉丝数。
 
 ## 结果文件
 
@@ -44,7 +60,10 @@
 AISpark_quote/
 ├── README.md
 ├── .grok/skills/x-quote-watchlist/
-│   ├── SKILL.md                 # 核对流程
-│   └── references/watchlist.md  # 核对名单
-└── {handle}-status-{id}-{YYYY}-{MMDD}.md   # 每次核对的结果
+│   ├── SKILL.md                 # 引用核对
+│   └── references/watchlist.md  # 核对名单（引用和粉丝共用）
+├── .grok/skills/x-followers-watchlist/
+│   └── SKILL.md                 # 拉粉丝并对比上一份
+├── {handle}-status-{id}-{YYYY}-{MMDD}.md   # 每次引用核对
+└── followers-截止-YYYY-MM-DD-HHmm.md      # 每次粉丝快照（不覆盖历史）
 ```
