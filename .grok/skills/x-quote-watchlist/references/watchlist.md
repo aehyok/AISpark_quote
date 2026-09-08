@@ -10,7 +10,6 @@ handle 不带 `@`。比对时忽略大小写。改这份文件即改名单。
 | YangGuangAI | 阳光 |
 | xiaomovps | 小墨同学 |
 | cheery9998 | Cheery |
-| jinglian | 前端哥Liam |
 | xiangxiang103 | 雨哥向前冲 |
 | LawrenceW_Zen | 劳伦斯 |
 | Liu_zhongxisn | Drunk |
